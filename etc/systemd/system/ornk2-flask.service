@@ -1,0 +1,11 @@
+[Unit]
+Description=Gunicorn instance to serve ornek2 Flask application
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/
+ExecStart=/usr/bin/gunicorn -w 4 -b 0.0.0.0:5000 ornek2:app
+
+[Install]
+WantedBy=multi-user.target
